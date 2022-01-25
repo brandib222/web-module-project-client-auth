@@ -1,18 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-
-const Login = () => {
-  return(<h2>Login</h2>)
-}
-
-const FriendsList = () => {
-  return(<h2>FriendsList</h2>)
-}
-
-const AddFriend = () => {
-  return(<h2>Add Friend</h2>)
-}
+import Login from './mocks/components/Login';
+import AddFriends from './mocks/components/AddFriends';
+import FriendsList from './mocks/components/FriendsList';
 
 function App() {
   return (
@@ -21,12 +12,15 @@ function App() {
         <Route exact path="/">
           <Login />
         </Route>
+
         <Route exact path="/login">
           <Redirect to="/" />
         </Route>
+
         <Route exact path="/friends">
           <FriendsList />
         </Route>
+
         <Route exact path="/friends/add">
           <AddFriends />
         </Route>
